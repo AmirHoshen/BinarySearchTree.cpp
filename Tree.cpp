@@ -350,7 +350,7 @@ void Tree::removeMatch(node* parent, node* match, bool left)
 	}
 }
 ///////////////////////////////////////////////////////
-/*
+
 bool Tree::contains(int key)
 {
 	return containsPrivate(key, _root);
@@ -382,7 +382,7 @@ bool Tree::containsPrivate(int key,node* ptr)
         return containsPrivate(key,ptr->right);
         
     }
-}*/
+}
 ////////////////////////////////////////////////////////////////////
 int Tree::left(int key)
 {
