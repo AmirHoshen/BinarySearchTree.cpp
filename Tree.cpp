@@ -394,15 +394,16 @@ int Tree::leftPrivate(int key,node* ptr)
     //if the tree is empty return error message 
     if(ptr==NULL)
     {
-	throw std::invalid_argument("no left child");
         cout <<"Sorry, there is no left child\n";
-        return -1;
+	throw std::invalid_argument("no left child");
     }
-    //if it found the father return the left-child 
-    if(ptr->key==key)
+    //if it found the father return the left-child
+    
+    if(ptr->key==key&&ptr->left!=NULL)
     {
         return ptr->left->key;
     }
+    
     //recursive call
     else  if(key < ptr->key)
     {
@@ -425,12 +426,11 @@ int Tree::rightPrivate(int key,node* ptr)
     //if the tree is empty return error message 
     if(ptr==NULL)
     {
-		throw std::invalid_argument("no rigth child");
         cout <<"Sorry, there is no right child\n";
-        return -1;
+        throw std::invalid_argument("no rigth child");
     }
     //if it found the father return the right-child 
-    if(ptr->key==key)
+    if(ptr->key==key&&ptr->right!=NULL)
     {
         return ptr->right->key;
     }
@@ -515,4 +515,3 @@ void Tree::removeSubtree(node* ptr)
 		delete ptr;
 	}
 }
-
